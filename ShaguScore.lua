@@ -32,7 +32,7 @@ ShaguScore:SetScript("OnHide", function()
 end)
 
 local function GetItemLinkByName(name)
-  for itemID = 1, 65536 do
+  for itemID = 1, 25818 do
     local itemName, hyperLink, itemQuality = GetItemInfo(itemID)
     if (itemName and itemName == name) then
       local _, _, _, hex = GetItemQualityColor(tonumber(itemQuality))
@@ -93,7 +93,12 @@ end
 
 function ShaguScore:Calculate(slot, rarity, ilvl)
   if not rarity then return nil end
-  return (rarity * ilvl) * (slot == "INVTYPE_2HWEAPON" and 2 or 1)
+  return ilvl
+end
+
+function ShaguScore:round(num, numDecimalPlaces)
+  local mult = 10^(numDecimalPlaces or 0)
+  return math.floor(num * mult + 0.5) / mult
 end
 
 function ShaguScore:ScanUnit(target)
@@ -118,14 +123,20 @@ function ShaguScore:ScanUnit(target)
         cscore = ShaguScore:Calculate(itemSlot, itemRarity, itemLevel)
       end
 
-      score = score + cscore
-      count = count + 1
+      if cscore >= 10 then
+        score = score + cscore
+        count = count + 1
+      end
     end
   end
 
-  local ar = ShaguScore:round(ar / count, 2);
-  local ag = ShaguScore:round(ag / count, 2);
-  local ab = ShaguScore:round(ab / count, 2);
+  if count > 0 then
+    score = score / count
+    score = ShaguScore:round(score, 1) -- 保留一位小数
+    ar = ShaguScore:round(ar / count, 2)
+    ag = ShaguScore:round(ag / count, 2)
+    ab = ShaguScore:round(ab / count, 2)
+  end
 
   if score ~= 0 then return score, ar, ag, ab else return nil end
 end
