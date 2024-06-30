@@ -1,8 +1,8 @@
 # ShaguScore
 
-This AddOn is a GearScore alike item rating. It includes a small database of the itemLevels of all items available in classic up to Naxxramas. Those values are are printed as score, similar to GearScore. Please don't take those values to serious, in vanilla the itemLevel is worth nothing.
+The original version of ShagoScore shows a score which is not very straightforward to understand. I changed the score to item level to make it clear.
 
-![character](https://raw.githubusercontent.com/shagu/ShaguAddons/master/_img/ShaguScore/character.jpg)
+![character](https://github.com/fhh2626/ShaguScore-Itemlevel/blob/master/character.png)
 
 ## Installation
 1. Download **[Latest Version](https://github.com/shagu/ShaguScore/archive/master.zip)**
