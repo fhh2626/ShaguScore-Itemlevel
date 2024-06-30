@@ -5,7 +5,7 @@ The original version of ShagoScore shows a score which is not very straightforwa
 ![character](https://github.com/fhh2626/ShaguScore-Itemlevel/blob/master/character.png)
 
 ## Installation
-1. Download **[Latest Version](https://github.com/shagu/ShaguScore/archive/master.zip)**
+1. Download the master branch
 2. Unpack the Zip file
 3. Rename the folder "ShaguScore-master" to "ShaguScore"
 4. Copy "ShaguScore" into Wow-Directory\Interface\AddOns
