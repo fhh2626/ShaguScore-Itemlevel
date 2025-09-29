@@ -12,6 +12,7 @@ The original version of ShagoScore shows a score which is not very straightforwa
 5. Restart Wow
 
 ## Older Versions
+Currently, the score is a weighted average of itemlevels of items.
 
 In older versions this addon did two things, it calculated the average color (rarity) of the player's equip and it aggregated a score of the overall equip.
 
